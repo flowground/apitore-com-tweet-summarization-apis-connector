@@ -1,0 +1,51 @@
+{
+    "title": "Tweet summarization APIs",
+    "description": "Tweet summarization.<BR />[Endpoint] https://api.apitore.com/api/27",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apitore.com/tweetSummarizationApis/0.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.apitore.com/api/27",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getUsingGET": {
+            "main": "./lib/actions/getUsingGET.js",
+            "title": "Summarize tweets.",
+            "description": "Tweet summarization API.<BR />Response<BR />&nbsp; Github: <a href=\"https://github.com/keigohtr/apitore-response-parent/tree/master/twitter-response\">twitter-response</a><BR />&nbsp; Class: com.apitore.banana.response.twitter.TwitterSummarizeResponseEntity<BR />",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
